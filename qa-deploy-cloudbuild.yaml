@@ -1,6 +1,6 @@
 steps:
 - name: gcr.io/cloud-builders/gsutil
-  args: ['cp', 'gs://${_COMPOSER_INPUT_BUCKET}/dags', 'gs://${_SPRINT3_QA_INPUT_BUCKET}/dags']
+  args: ['cp -r', 'gs://${_COMPOSER_INPUT_BUCKET}/dags', 'gs://${_SPRINT3_QA_INPUT_BUCKET}/dags']
   id: 'deploy-dags-to-sprint3-input-bucket'
 # - name: gcr.io/cloud-builders/gsutil
 #   args: ['cp', 'gs://${_COMPOSER_INPUT_BUCKET}/dags/landing', 'gs://${_SPRINT3_QA_INPUT_BUCKET}/dags/landing']
