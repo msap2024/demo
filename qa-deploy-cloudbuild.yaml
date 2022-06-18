@@ -16,7 +16,7 @@ steps:
   args: ['cp', 'gs://${_SPRINT3_QA_INPUT_BUCKET}/dags/gcde/landing/*', 'gs://${_COMPOSER_QA_INPUT_BUCKET}/dags/gcde/landing/']
   id: 'deploy-landing-to-composer-bucket'
 - name: gcr.io/cloud-builders/gsutil
-  args: ['cp', 'gs://${__SPRINT3_QA_INPUT_BUCKET}/dags/gcde/config/*', 'gs://${_COMPOSER_QA_INPUT_BUCKET}/dags/gcde/config/']
+  args: ['cp', 'gs://${_SPRINT3_QA_INPUT_BUCKET}/dags/gcde/config/*', 'gs://${_COMPOSER_QA_INPUT_BUCKET}/dags/gcde/config/']
   id: 'deploy-config-to-composer-bucket'
 substitutions:
    _COMPOSER_INPUT_BUCKET: us-central1-mycomp22-b2e76f33-bucket
