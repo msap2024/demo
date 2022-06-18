@@ -3,7 +3,7 @@ steps:
   args: ['cp', 'gs://${_COMPOSER_INPUT_BUCKET}/dags/*', 'gs://${_SPRINT3_QA_INPUT_BUCKET}/dags']
   id: 'deploy-dags-to-sprint3-input-bucket'
 - name: gcr.io/cloud-builders/gsutil
-  args: ['cp', 'gs://${_COMPOSER_INPUT_BUCKET}/dags/landing/*', 'gs://${_SPRINT3_QA_INPUT_BUCKET}/dags/landing']
+  args: ['cp', 'gs://${_COMPOSER_INPUT_BUCKET}/dags/landing/*', 'gs://${_SPRINT3_QA_INPUT_BUCKET}/dags/landing/']
   id: 'deploy-landing-to-sprint3-input-bucket'
 # - name: gcr.io/cloud-builders/gsutil
 #   args: ['cp', 'gs://${_COMPOSER_INPUT_BUCKET}/dags/config', 'gs://${_SPRINT3_QA_INPUT_BUCKET}/dags/config']
