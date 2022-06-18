@@ -10,16 +10,18 @@ steps:
   id: 'deploy-config-to-sprint3-input-bucket'
 
 - name: gcr.io/cloud-builders/gsutil
-  args: ['cp', 'gs://${_SPRINT3_QA_INPUT_BUCKET/dags', 'gs://${_COMPOSER_INPUT_BUCKET/dags]'
+  args: ['cp', 'gs://${_SPRINT3_QA_INPUT_BUCKET}/dags', 'gs://${_COMPOSER_QA_INPUT_BUCKET/dags]'
   id: 'deploy-dags-to-qa-composer-bucket'
 - name: gcr.io/cloud-builders/gsutil
-  args: ['cp', 'gs://${_COMPOSER_INPUT_BUCKET}/dags/landing', 'gs://${_SPRINT3__INPUT_BUCKET/dags/landing]'
+  args: ['cp', 'gs://${_SPRINT3_QA_INPUT_BUCKET}/dags/landing', 'gs://${_COMPOSER_QA_INPUT_BUCKET/dags/landing]'
   id: 'deploy-landing-to-composer-bucket'
 - name: gcr.io/cloud-builders/gsutil
-  args: ['cp', 'gs://${_COMPOSER_INPUT_BUCKET}/dags/config', 'gs://${_SPRINT3__INPUT_BUCKET/dags/config]'
+  args: ['cp', 'gs://${__SPRINT3_QA_INPUT_BUCKET}/dags/config', 'gs://${_COMPOSER_QA_INPUT_BUCKET/dags/config]'
   id: 'deploy-config-to-composer-bucket'
 substitutions:
    _COMPOSER_INPUT_BUCKET: us-central1-mycomp22-b2e76f33-bucket
    _SPRINT3_QA_INPUT_BUCKET: gcde-sprint3-input-bucket
+   _COMPOSER_QA_INPUT_BUCKET: us-central1-qa-composer-3a95e9b9-bucket
+   
 options:
   logging: CLOUD_LOGGING_ONLY
